@@ -469,6 +469,10 @@ a {
   color: var(--green);
 }
 
+.extra-heading h2 {
+  color: #6d5bd0;
+}
+
 .orange-heading h2,
 .pdf-heading h2 {
   color: var(--orange);
@@ -716,6 +720,113 @@ th {
   font-weight: 950;
 }
 
+.extra-section {
+  background: rgba(255, 255, 255, 0.74);
+  border: 2px solid rgba(109, 91, 208, 0.18);
+}
+
+.extra-intro {
+  max-width: 860px;
+  margin: 0 auto 24px;
+  padding: 18px 22px;
+  border: 2px dashed rgba(109, 91, 208, 0.32);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  color: #334155;
+  font-weight: 800;
+  text-align: center;
+}
+
+.extra-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.extra-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 292px;
+  padding: 22px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 10px 22px rgba(31, 41, 55, 0.1);
+}
+
+.extra-icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 14px;
+  border-radius: 16px;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+
+.extra-card h3 {
+  margin: 0 0 10px;
+  color: #1f2a44;
+  font-size: 1.18rem;
+  font-weight: 950;
+}
+
+.extra-card p {
+  margin: 0 0 20px;
+  color: #46586b;
+}
+
+.extra-card a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: auto;
+  padding: 12px 16px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 950;
+  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.14);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.extra-card a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 24px rgba(15, 23, 42, 0.18);
+  filter: saturate(1.08);
+}
+
+.words-card {
+  border: 2px solid #c7d2fe;
+  background: linear-gradient(180deg, #fff, #eef2ff);
+}
+
+.words-card .extra-icon,
+.words-card a {
+  background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+}
+
+.grammar-card {
+  border: 2px solid #fed7aa;
+  background: linear-gradient(180deg, #fff, #fff7ed);
+}
+
+.grammar-card .extra-icon,
+.grammar-card a {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+}
+
+.print-card {
+  border: 2px solid #a7f3d0;
+  background: linear-gradient(180deg, #fff, #ecfeff);
+}
+
+.print-card .extra-icon,
+.print-card a {
+  background: linear-gradient(135deg, #10b981, #0891b2);
+}
+
 .site-footer {
   padding: 28px 20px 40px;
   color: var(--deep-blue);
@@ -749,7 +860,8 @@ th {
   .two-columns,
   .steps,
   .link-grid,
-  .app-grid {
+  .app-grid,
+  .extra-grid {
     grid-template-columns: 1fr;
   }
 
@@ -820,6 +932,10 @@ th {
     width: calc(100% - 24px);
     padding: 24px 16px;
     border-radius: 20px;
+  }
+
+  .extra-intro {
+    text-align: left;
   }
 
   .section-heading {

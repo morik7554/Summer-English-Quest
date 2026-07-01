@@ -1,5 +1,5 @@
 const navLinks = Array.from(document.querySelectorAll(".nav-link"));
-const sections = ["top", "test", "pdf", "apps"]
+const sections = ["top", "test", "pdf", "apps", "extra"]
   .map((id) => document.getElementById(id))
   .filter(Boolean);
 const openingCeremonyDate = "2026-08-27";
