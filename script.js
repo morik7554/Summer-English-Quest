@@ -2,7 +2,7 @@ const navLinks = Array.from(document.querySelectorAll(".nav-link"));
 const sections = ["top", "test", "pdf", "apps"]
   .map((id) => document.getElementById(id))
   .filter(Boolean);
-const openingCeremonyDate = "2026-09-01";
+const openingCeremonyDate = "2026-08-27";
 
 const updateCountdown = () => {
   const daysLeftElement = document.getElementById("days-left");
