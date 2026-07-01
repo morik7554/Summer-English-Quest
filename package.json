@@ -1,0 +1,11 @@
+{
+  "name": "summer-english-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "夏休み英語課題ページ",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/serve.mjs"
+  },
+  "devDependencies": {}
+}
