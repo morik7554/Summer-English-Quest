@@ -235,7 +235,7 @@ a {
 
 .teacher-message {
   display: grid;
-  grid-template-columns: 128px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 128px;
   align-items: center;
   gap: 18px;
   width: min(820px, 100%);
@@ -243,6 +243,8 @@ a {
 }
 
 .teacher-message img {
+  grid-column: 2;
+  grid-row: 1;
   width: 128px;
   height: 128px;
   object-fit: contain;
@@ -250,6 +252,8 @@ a {
 }
 
 .teacher-message p {
+  grid-column: 1;
+  grid-row: 1;
   position: relative;
   margin: 0;
   padding: 18px 22px;
@@ -267,13 +271,13 @@ a {
 .teacher-message p::before {
   content: "";
   position: absolute;
-  left: -18px;
+  right: -18px;
   top: 46px;
   width: 0;
   height: 0;
   border-top: 14px solid transparent;
   border-bottom: 14px solid transparent;
-  border-right: 18px solid rgba(255, 255, 255, 0.94);
+  border-left: 18px solid rgba(255, 255, 255, 0.94);
 }
 
 .hero-actions {
@@ -1169,11 +1173,15 @@ th {
   }
 
   .teacher-message img {
+    grid-column: 1;
+    grid-row: 2;
     width: 112px;
     height: 112px;
   }
 
   .teacher-message p {
+    grid-column: 1;
+    grid-row: 1;
     width: 100%;
     padding: 16px 18px;
     text-align: left;
@@ -1181,12 +1189,14 @@ th {
 
   .teacher-message p::before {
     left: 50%;
-    top: -18px;
+    right: auto;
+    top: auto;
+    bottom: -18px;
     transform: translateX(-50%);
     border-right: 14px solid transparent;
     border-left: 14px solid transparent;
-    border-bottom: 18px solid rgba(255, 255, 255, 0.94);
-    border-top: 0;
+    border-top: 18px solid rgba(255, 255, 255, 0.94);
+    border-bottom: 0;
   }
 
   .hero-actions {
