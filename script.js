@@ -1,29 +1,7 @@
 const navLinks = Array.from(document.querySelectorAll(".nav-link"));
-const sections = ["top", "test", "pdf", "apps", "extra"]
+const sections = ["top", "route", "range", "grammar", "apps", "check"]
   .map((id) => document.getElementById(id))
   .filter(Boolean);
-const openingCeremonyDate = "2026-08-27";
-
-const updateCountdown = () => {
-  const daysLeftElement = document.getElementById("days-left");
-  if (!daysLeftElement) return;
-
-  const today = new Date();
-  const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-  const target = new Date(`${openingCeremonyDate}T00:00:00`);
-  const diffMs = target.getTime() - todayStart.getTime();
-  const daysLeft = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
-
-  if (daysLeft > 0) {
-    daysLeftElement.textContent = `あと${daysLeft}日`;
-  } else if (daysLeft === 0) {
-    daysLeftElement.textContent = "今日です";
-  } else {
-    daysLeftElement.textContent = "始まりました";
-  }
-};
-
-updateCountdown();
 
 const setActiveLink = (id) => {
   navLinks.forEach((link) => {
@@ -63,3 +41,37 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     setActiveLink(targetId);
   });
 });
+
+const checkboxes = Array.from(document.querySelectorAll(".checklist-grid input"));
+const checkedCount = document.getElementById("checked-count");
+const checkProgress = document.getElementById("check-progress");
+const storageKey = "exam-checklist-progress";
+
+const updateChecklistProgress = () => {
+  if (!checkedCount || !checkProgress || checkboxes.length === 0) return;
+
+  const completed = checkboxes.filter((checkbox) => checkbox.checked).length;
+  checkedCount.textContent = String(completed);
+  checkProgress.style.width = `${(completed / checkboxes.length) * 100}%`;
+};
+
+try {
+  const saved = JSON.parse(localStorage.getItem(storageKey) || "[]");
+  checkboxes.forEach((checkbox, index) => {
+    checkbox.checked = Boolean(saved[index]);
+  });
+} catch {
+  localStorage.removeItem(storageKey);
+}
+
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", () => {
+    localStorage.setItem(
+      storageKey,
+      JSON.stringify(checkboxes.map((item) => item.checked))
+    );
+    updateChecklistProgress();
+  });
+});
+
+updateChecklistProgress();
