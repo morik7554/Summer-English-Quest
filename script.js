@@ -28,6 +28,41 @@ const observer = new IntersectionObserver(
 
 sections.forEach((section) => observer.observe(section));
 
+const teacherComments = [
+  "今日の10分が、本番の1点につながる。まず1問やってみよう！",
+  "全部を一気にやらなくて大丈夫。今日は一つ、確実にできるようにしよう。",
+  "間違いは伸びるチャンス！答え直した問題ほど、力になるよ。",
+  "関係代名詞は、先行詞が人か物かを最初に見分けよう！",
+  "後置修飾は、説明される名詞を見つけるところから始めよう。",
+  "-ingは『〜している』、過去分詞は『〜された』を目印にしよう。",
+  "間接疑問文は、疑問詞の後ろを〈主語＋動詞〉の語順にしよう！",
+  "English-Words-Masterは、Unit 5を終えたらUnit 6へ進もう。",
+  "単語は見るだけでなく、声に出して書くと覚えやすいよ。",
+  "わん単 p.28〜35、少しずつでも毎日触れるのが勝ち！",
+  "教科書 p.61〜81は、本文と重要表現をセットで確認しよう。",
+  "ワークは正解の数より、間違えた理由を説明できることが大切。",
+  "迷ったら『解説を見る』→『問題を解く』の順番で進めよう。",
+  "昨日できなかった問題が今日できたら、それは大きな成長だよ。",
+  "定期テスト③、一つずつ準備すれば大丈夫。一緒に頑張ろう！",
+];
+
+const teacherComment = document.getElementById("teacher-comment");
+const nextCommentButton = document.getElementById("next-comment");
+let teacherCommentIndex = Math.floor(Math.random() * teacherComments.length);
+
+const showTeacherComment = () => {
+  if (teacherComment) {
+    teacherComment.textContent = teacherComments[teacherCommentIndex];
+  }
+};
+
+showTeacherComment();
+
+nextCommentButton?.addEventListener("click", () => {
+  teacherCommentIndex = (teacherCommentIndex + 1) % teacherComments.length;
+  showTeacherComment();
+});
+
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
     const targetId = link.getAttribute("href").slice(1);

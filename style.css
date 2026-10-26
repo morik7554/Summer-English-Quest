@@ -313,11 +313,45 @@ a {
 }
 
 .teacher-bubble p {
-  margin: 0;
+  margin: 7px 0 14px;
   color: #0f3d66;
   font-size: clamp(1.15rem, 2.8vw, 1.65rem);
   font-weight: 950;
   line-height: 1.45;
+}
+
+.comment-label {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+  font-size: 0.78rem;
+  font-weight: 950;
+}
+
+#next-comment {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 7px 14px;
+  border: 2px solid rgba(8, 120, 216, 0.2);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--blue-dark);
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 950;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+#next-comment:hover,
+#next-comment:focus-visible {
+  border-color: var(--blue);
+  background: var(--blue-soft);
+  transform: translateY(-1px);
 }
 
 .priority-section {
