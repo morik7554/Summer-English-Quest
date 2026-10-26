@@ -524,15 +524,26 @@ a {
   font-weight: 800;
 }
 
-.grammar-point a {
+.grammar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.grammar-point .grammar-actions a {
   display: inline-flex;
   justify-content: center;
-  margin-top: auto;
+  flex: 1 1 118px;
   padding: 10px 14px;
   border-radius: 999px;
   background: linear-gradient(135deg, #f97316, #f59e0b);
   color: #fff;
   font-weight: 950;
+}
+
+.grammar-point .grammar-actions .knock-link {
+  background: linear-gradient(135deg, #0ea5e9, #16a34a);
 }
 
 .app-choice-grid {
@@ -542,6 +553,7 @@ a {
 }
 
 .app-choice-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 286px;
@@ -582,6 +594,39 @@ a {
 
 .words-master .app-icon {
   background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+}
+
+.priority-app {
+  border-color: #4f46e5;
+  box-shadow: 0 16px 30px rgba(79, 70, 229, 0.2);
+}
+
+.priority-badge {
+  align-self: flex-start;
+  margin: -8px 0 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 950;
+}
+
+.unit-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 2px 0 12px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #eef2ff;
+  color: #3730a3;
+  font-size: 0.9rem;
+}
+
+.quizlet-card .app-icon {
+  background: linear-gradient(135deg, #4255ff, #7c3aed);
 }
 
 .app-choice-card p {

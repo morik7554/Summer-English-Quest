@@ -45,7 +45,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 const checkboxes = Array.from(document.querySelectorAll(".checklist-grid input"));
 const checkedCount = document.getElementById("checked-count");
 const checkProgress = document.getElementById("check-progress");
-const storageKey = "exam-checklist-progress";
+const storageKey = "exam-3-checklist-progress-v2";
 
 const updateChecklistProgress = () => {
   if (!checkedCount || !checkProgress || checkboxes.length === 0) return;
