@@ -466,6 +466,57 @@ a {
   box-shadow: 0 12px 22px rgba(15, 61, 102, 0.08);
 }
 
+.range-update-note {
+  margin: 0 0 16px;
+  padding: 14px 16px;
+  border: 2px solid #f59e0b;
+  border-radius: 14px;
+  background: #fffbeb;
+  color: #92400e;
+  font-weight: 900;
+}
+
+.range-update-note strong {
+  display: inline-flex;
+  margin-right: 8px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #f97316;
+  color: #fff;
+  font-size: 0.82rem;
+}
+
+.range-update-note b {
+  color: #c2410c;
+  font-size: 1.08em;
+}
+
+.changed-range-row td {
+  background: #fff7ed;
+}
+
+.changed-range-row td:first-child {
+  border-left: 5px solid #f97316;
+}
+
+.changed-range-row td:nth-child(2) strong {
+  color: #c2410c;
+  font-size: 1.08rem;
+}
+
+.update-badge {
+  display: inline-flex;
+  margin-left: 6px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #f97316;
+  color: #fff;
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 950;
+  white-space: nowrap;
+}
+
 .range-table {
   width: 100%;
   min-width: 720px;
@@ -743,6 +794,16 @@ a {
   font-weight: 900;
   box-shadow: 0 8px 16px rgba(15, 61, 102, 0.07);
   cursor: pointer;
+}
+
+.checklist-grid .changed-check {
+  border-color: #fdba74;
+  background: #fff7ed;
+}
+
+.changed-check strong {
+  color: #c2410c;
+  font-size: 0.84rem;
 }
 
 .checklist-grid input {
